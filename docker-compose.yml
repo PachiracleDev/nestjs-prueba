@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=prueba_tecnica
+      - DATABASE_HOST=127.0.01
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    ports:
+      - '5432:5432'
+    volumes:
+      - /home/pachiracledev/postgres-prueba:/var/lib/postgresql/data
