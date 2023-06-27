@@ -31,7 +31,7 @@ export class UsersService {
 
     const payload = {
       role: 'user',
-      sub: newUser.id,
+      id: newUser.id,
     };
 
     return payload;

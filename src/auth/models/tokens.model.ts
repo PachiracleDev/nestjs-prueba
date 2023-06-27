@@ -1,6 +1,6 @@
 export interface PayloadToken {
   role: string;
-  sub: number;
+  id: number;
 }
 
 export type JwtPayloadWithRt = PayloadToken & { refreshToken: string };

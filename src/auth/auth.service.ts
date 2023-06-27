@@ -28,7 +28,7 @@ export class AuthService {
     const payload = await this.usersService.create(dto);
     if (!payload) throw new ForbiddenException('Email ya registrado');
     const tokens = await this.generateJWTS(payload);
-    await this.usersService.updateRt(payload.sub, tokens.refresh_token);
+    await this.usersService.updateRt(payload.id, tokens.refresh_token);
 
     return tokens;
   }
@@ -61,7 +61,7 @@ export class AuthService {
 
     const payload = {
       role: user.role,
-      sub: user.id,
+      id: user.id,
     };
 
     const tokens = await this.generateJWTS(payload);
@@ -72,7 +72,7 @@ export class AuthService {
   async login(user) {
     const payload = {
       role: user.role,
-      sub: user.id,
+      id: user.id,
     };
 
     const tokens = await this.generateJWTS(payload);
