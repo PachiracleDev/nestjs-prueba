@@ -13,3 +13,25 @@ services:
       - '5432:5432'
     volumes:
       - /home/pachiracledev/postgres-prueba:/var/lib/postgresql/data
+
+  api-prod:
+    container_name: nestjs_api_prod
+    image: nestjs-api-prod
+    environment:
+      - JWT_SECRET=LwuMN3UQDyKEzPedomk0tXAgVHhpjFiW
+      - JWT_REFRESH_SECRET=QDyKEzPedomk0tXAgVHhpjFiWLwuMN3U
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USERNAME=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=prueba_tecnica
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
+    depends_on:
+      - postgres
+
+networks:
+  shared-network:

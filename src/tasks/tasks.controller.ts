@@ -17,12 +17,7 @@ import { UpdateTaskDto } from './dto/update-task.dto';
 import { JwtAuthGuard } from 'src/auth/guards/jwt.auth.guard';
 import { Request as ExpressRequest } from 'express';
 import { PageOptionsDto } from './dto/page-options.dto';
-import {
-  ApiTags,
-  ApiBearerAuth,
-  ApiOkResponse,
-  getSchemaPath,
-} from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth, ApiOkResponse } from '@nestjs/swagger';
 import { Task } from './entities/task.entity';
 
 @ApiTags('tasks')
