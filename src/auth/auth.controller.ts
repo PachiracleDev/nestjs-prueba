@@ -5,12 +5,7 @@ import { RegisterInput, LoginInput } from './dto/auth.dto';
 import { LocalAuthGuard } from './guards/local.auth.guard';
 import { RefreshGuard } from './guards/jwt.refresh.guard';
 import { JwtAuthGuard } from './guards/jwt.auth.guard';
-import {
-  ApiOkResponse,
-  ApiResponse,
-  ApiTags,
-  getSchemaPath,
-} from '@nestjs/swagger';
+import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('auth')
 @Controller('auth')
